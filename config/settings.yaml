@@ -1,0 +1,21 @@
+sources:
+  ticket:
+    adapter: "jira"
+    config:
+      base_url: "https://blablacar.atlassian.net"
+      # credentials in .env: JIRA_EMAIL, JIRA_API_TOKEN
+
+  context:
+    adapters:
+      - adapter: "local_repo"
+        config:
+          repo_path: "/path/to/monorepo"
+          max_results: 20
+
+  output:
+    adapter: "jira_comment"
+
+  llm:
+    adapter: "copilot"
+    config:
+      github_token_env: "GITHUB_TOKEN"

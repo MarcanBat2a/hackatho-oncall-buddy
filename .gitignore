@@ -1,0 +1,18 @@
+# BMad / agents
+_bmad/
+_bmad-output/
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# Secrets
+config/.env
+.env
+
+# OS
+.DS_Store

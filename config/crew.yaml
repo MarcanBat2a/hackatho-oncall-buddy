@@ -1,0 +1,29 @@
+crew:
+  moderator:
+    model: "claude-sonnet-4-6"
+    max_rounds: 5
+    rules:
+      - "Every agent must speak each round"
+      - "An agent cannot simply agree — it must argue its position"
+      - "The moderator summarizes convergence and divergence points each round"
+      - "Debate ends when consensus is reached OR max_rounds is hit"
+
+  agents:
+    - name: "Triage"
+      role: "Identify the functional domain and suspicious files"
+      model: "claude-sonnet-4-6"
+      prompt_template: "prompts/triage.txt"
+
+    - name: "Analyst"
+      role: "Analyze the code and propose root cause hypotheses"
+      model: "claude-opus-4-6"
+      prompt_template: "prompts/analyst.txt"
+
+    - name: "Fixer"
+      role: "Propose a concrete fix and assess its impact"
+      model: "gpt-4o"
+      prompt_template: "prompts/fixer.txt"
+
+  synthesizer:
+    model: "claude-opus-4-6"
+    prompt_template: "prompts/synthesizer.txt"

@@ -1,0 +1,15 @@
+[project]
+name = "hackathon-bbc"
+version = "0.1.0"
+description = "Jira Bug Analyzer — Multi-agent debate crew for automated bug diagnosis"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.0",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0",
+    "jira>=3.5",
+    "aiohttp>=3.9",
+]
+
+[project.scripts]
+jira-bug-analyzer = "src.main:main"
